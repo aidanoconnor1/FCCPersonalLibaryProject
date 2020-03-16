@@ -21,10 +21,19 @@ app.use(helmet.noCache())
 app.use(helmet.hidePoweredBy({ setTo: 'PHP 4.2.0' }))
 
 //Index page (static HTML)
+/*
 app.route('/')
   .get(function (req, res) {
     res.sendFile(process.cwd() + '/views/index.html');
   });
+*/
+  app.get('*', (request, response) => {
+
+    response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+    
+     });
+    
+    });
 
   app.route('/gaybar').get((req, res) => {
       res.send('i wanna take you to a gaybar')
