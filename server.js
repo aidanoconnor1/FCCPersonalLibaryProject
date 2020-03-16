@@ -28,10 +28,7 @@ app.route('/')
     res.sendFile(process.cwd() + '/views/index.html');
   });
 */
-app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'PersonalLibary/client/build', 'index.html'));
-});
-    
+
 
   app.route('/gaybar').get((req, res) => {
       res.send('i wanna take you to a gaybar')
@@ -50,7 +47,15 @@ app.use(function(req, res, next) {
     .send('Not Found');
 });
 
+//serve the react build
+
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'PersonalLibary/client/build', 'index.html'));
+});
+    
+
 //heroku stuff
+
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('personallibary/client/build'))
