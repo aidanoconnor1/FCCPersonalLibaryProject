@@ -29,11 +29,11 @@ app.route('/')
 */
   app.get('*', (request, response) => {
 
-    response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+    response.sendFile(path.join(__dirname, 'personallibary/client/build', 'index.html'));
     
      });
     
-    });
+    
 
   app.route('/gaybar').get((req, res) => {
       res.send('i wanna take you to a gaybar')
