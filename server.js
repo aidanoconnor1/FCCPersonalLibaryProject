@@ -39,6 +39,10 @@ app.route('/')
 runner
 //Routing for API 
 apiRoutes(app);  
+
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'PersonalLibary/client/build', 'index.html'));
+});
     
 //404 Not Found Middleware
 app.use(function(req, res, next) {
@@ -49,9 +53,7 @@ app.use(function(req, res, next) {
 
 //serve the react build
 
-app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'PersonalLibary/client/build', 'index.html'));
-});
+
     
 
 //heroku stuff
