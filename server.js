@@ -30,8 +30,8 @@ app.route('/')
 */
 
 
-  app.route('/gaybar').get((req, res) => {
-      res.send('i wanna take you to a gaybar')
+  app.route('/test').get((req, res) => {
+      res.send('test')
   })
 
 //For FCC testing purposes
