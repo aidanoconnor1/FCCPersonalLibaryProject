@@ -12,5 +12,33 @@
         "_id":"333",
         "title":"bookWithComment",
         "comment":["i have a comment", "im another comment", "comment 3"]
+    },{
+        "_id":"4",
+        "title":"the power of nightmares",
+        "comment":["40%","cheep and bad"]
+    },{
+        "_id":"5",
+        "title":"Buffalo Trace",
+        "comment":["better but not amazin","40%","will buy again","need more booze","whisky = good"]
+    },{
+        "_id":"6",
+        "title":"vegetable soup",
+        "comment":[]
+    },{
+        "_id":"7",
+        "title":"cosmo the cat is the best cat ever!",
+        "comment":["10/10","does meow alot"]
+    },{
+        "_id":"8",
+        "title":"9/11 was an inside job",
+        "comment":[]
+    },{
+        "_id":"9",
+        "title":"monkey island",
+        "comment":["megh","another comment","wew many comments","gotta keep typing","comment comment comment","example text"]
+    },{
+        "_id":"10",
+        "title":"Epstein didn't kill himself",
+        "comment":["prince andrew needs to be forced to talk"]
     }
 ]

@@ -56,7 +56,7 @@ const TableRowNormall = ( { _id, title, comment, commentCount, editSetter, delet
         <td>{_id}</td>
         <td>{title}</td>
         {commentCount <= 1 ? <td>{comment[0]}</td> :    
-        <td>{comment[0]} <button className="morebutton" onClick={() => setMoreComments(_id)}><Badge pill className="morepill" variant="info"> See More ({commentCount-1}) <FontAwesomeIcon  className="" icon={faCaretDown} /> </Badge></button></td>
+        <td>{comment[0]}<Badge pill className="morepill"  onClick={() => setMoreComments(_id)} variant="info"> See More ({commentCount-1}) <FontAwesomeIcon  className="" icon={faCaretDown} /> </Badge></td>
             }
         <td><EditButton _id={_id} editSetter={editSetter}  /></td>
         <td><DeleteButton _id={_id} deleteBook={deleteBook} /></td>
@@ -66,6 +66,8 @@ const TableRowNormall = ( { _id, title, comment, commentCount, editSetter, delet
 
     )
 }
+
+//<button className="morebutton" onClick={() => setMoreComments(_id)}><Badge pill className="morepill" variant="info"> See More ({commentCount-1}) <FontAwesomeIcon  className="" icon={faCaretDown} /> </Badge></button>
 
 const TableRowEditMode = (  { _id, title, comment, editSetter, toggleEdit, deleteBook, newComment, editComment, commentText } ) => {
     return (
@@ -98,7 +100,7 @@ const TableRowMore = ( {moreComment, _id, title, comment, commentCount,   editSe
             <tr>
                 <td>{_id}</td>
                 <td>{title}</td>
-                <td>{comment[0]} <button className="morebutton" onClick={() => listAllComments()}><Badge pill className="morepill" variant="info">Hide More ({commentCount-1})   <FontAwesomeIcon  className="" icon={faCaretUp} /> </Badge></button></td>
+                <td>{comment[0]}<Badge pill className="morepill"  onClick={() => listAllComments()} variant="info">Hide More ({commentCount-1})   <FontAwesomeIcon  className="" icon={faCaretUp} /> </Badge></td>
                 <td><EditButton _id={_id} editSetter={editSetter}  /></td>
                 <td><DeleteButton _id={_id} deleteBook={deleteBook} /></td>               
             </tr>
