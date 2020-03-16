@@ -43,9 +43,7 @@ const autoHide = () => {
 useEffect(() => {
 
   let source = axios.CancelToken.source();
-  
-  console.log('going')
-  axios.get('http://localhost:5000/api/books', {
+  axios.get('/api/books', {
     cancleToken: source.token
   })
     .then((bookList) => {
@@ -70,25 +68,25 @@ const searchFilter = (book) => {
 //Submit Book
 const submitNewBook = () => {
   setIsLoading(true)
-axios.post('http://localhost:5000/api/books', {
+axios.post('/api/books', {
         title:bookTitle
 }).then(() => console.log("Book Added"), setToastSucFail('success'), setShowToast(true), setToastMessage('Book Added'), setBookTitle('') ).then(() =>  setIsLoading(false))
 }
 // Deletes
 
 const deleteAllBooks = () => {
-  axios.delete('http://localhost:5000/api/books')
+  axios.delete('/api/books')
     .then(() => console.log("All Books Deleted!!!"), setToastSucFail('danger'), setShowToast(true), setToastMessage('All Books Deleted!') )
 }
 
 const deleteBook = (id) => {
-  axios.delete(`http://localhost:5000/api/books/${id}`)
+  axios.delete(`/api/books/${id}`)
   .then(() => setToastSucFail('danger'), setShowToast(true), setToastMessage('Book Deleted!'))
 }
 
 // Add Edit Comments
 const newComment = (id) => { 
-    axios.post(`http://localhost:5000/api/books/${id}`, {
+    axios.post(`/api/books/${id}`, {
   comment:comment
 }).then(() => setEdit(false), console.log('new comment added'), setToastSucFail('success'), setShowToast(true), setToastMessage('Comment Added!') )
 .catch(() => console.log('joi'))
