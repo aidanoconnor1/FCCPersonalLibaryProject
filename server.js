@@ -43,7 +43,14 @@ app.use(function(req, res, next) {
     .send('Not Found');
 });
 
+//heroku stuff
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'))
+}
+
 //Start our server and tests!
+
 app.listen(process.env.PORT || 5000, function () {
   console.log("Listening on port " + process.env.PORT);
   if(process.env.NODE_ENV==='test') {
