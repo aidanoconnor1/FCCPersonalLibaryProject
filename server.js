@@ -9,6 +9,7 @@ var fccTestingRoutes  = require('./routes/fcctesting.js');
 var runner            = require('./test-runner.js');
 require('dotenv').config()
 var app = express();
+const path = require("path")
 
 
 app.use('/public', express.static(process.cwd() + '/public'));
@@ -27,12 +28,9 @@ app.route('/')
     res.sendFile(process.cwd() + '/views/index.html');
   });
 */
-  app.get('*', (request, response) => {
-
-    response.sendFile(path.join(__dirname, 'personallibary/client/build', 'index.html'));
-    
-     });
-    
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'PersonalLibary/client/build', 'index.html'));
+});
     
 
   app.route('/gaybar').get((req, res) => {
@@ -55,7 +53,7 @@ app.use(function(req, res, next) {
 //heroku stuff
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'))
+  app.use(express.static('personallibary/client/build'))
 }
 
 //Start our server and tests!
