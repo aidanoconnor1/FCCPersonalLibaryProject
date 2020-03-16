@@ -5,10 +5,10 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
-    "install client": "cd PersonalLibary && cd client && npm install",
+    "installclient": "cd PersonalLibary && cd client && npm install",
     "build": "cd PersonalLibary && cd client && npm run build",
     "client": "cd PersonalLibary && cd client && npm start",
-    "heroku-postbuild": "npm run install client && npm run build"
+    "heroku-postbuild": "npm run installclient && npm run build"
   },
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
