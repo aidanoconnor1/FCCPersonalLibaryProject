@@ -28,7 +28,7 @@ app.route('/')
     res.sendFile(process.cwd() + '/views/index.html');
   });
 */
-
+app.use(express.static(path.join(__dirname, 'client/build')));
 
   app.route('/test').get((req, res) => {
       res.send('test')
